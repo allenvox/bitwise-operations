@@ -19,4 +19,4 @@ jobs:
         run: bin/varint
 
       - name: Encode points.txt to UTF-8 binary format & vice versa
-        run: cat points.txt && bin/coder encode points.txt units.bin && bin/coder decode units.bin result.txt && && && cat result.txt
+        run: cat points.txt && bin/coder encode points.txt units.bin && bin/coder decode units.bin result.txt && echo "\n" && cat result.txt
