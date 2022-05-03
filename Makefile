@@ -8,7 +8,7 @@ varint: bin/varint
 
 uncompress: bin/uncompress
 
-bin/coder: obj/main.o obj/coder.o obj/command.o
+bin/coder: obj/main.o obj/coder.o obj/command.o -lm
 	$(DIRGUARD)
 	$(CFLAGS) -o $@ $^
 	
