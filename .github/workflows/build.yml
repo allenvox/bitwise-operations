@@ -1,0 +1,22 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build coder
+        run: make
+
+      - name: Build varint
+        run: make varint
+
+      - name: Run varint
+        run: bin/varint
+
+      - name: Encode points.txt to UTF-8 binary format & vice versa
+        run: cat points.txt && bin/coder encode points.txt units.bin && bin/coder decode units.bin result.txt && cat result.txt
